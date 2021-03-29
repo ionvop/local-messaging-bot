@@ -7,4 +7,5 @@ Because of VBScript's limitations, I had to use some very inefficient workaround
 *Like the utilization of* `wscript.sleep()` *to prevent the script from doing anything while a process is loading and hope that it finishes loading before the script does anything, or simulating keypresses really just to navigate through the menu and get the desired value.*\
 This is a workaround for waiting until the desired process is detected, but I'm sure there's a much better workaround than this.
 
-This is just a **personal project**, I only made this for shits and giggles.
+This is just a **personal project**.\
+I only made this for shits and giggles.
