@@ -21,7 +21,7 @@ end function
 
 function funcGetInput(fCommand)
     objShell.sendkeys("{F12}")
-    wscript.sleep(500)
+    wscript.sleep(1000)
     objShell.sendkeys("^f")
     wscript.sleep(100)
     objShell.sendkeys("^a")
@@ -57,20 +57,20 @@ function funcGetInput(fCommand)
     end if
 
     objShell.sendkeys("~")
-    wscript.sleep(100)
+    wscript.sleep(500)
     objShell.sendkeys("+~")
-    wscript.sleep(100)
+    wscript.sleep(500)
     
     for i = 1 to 3
         objShell.sendkeys("{TAB}")
         wscript.sleep(100)
     next
 
-    wscript.sleep(500)
+    wscript.sleep(1000)
     objShell.sendkeys("^c")
-    wscript.sleep(500)
+    wscript.sleep(1000)
     objShell.sendkeys("%{TAB}")
-    wscript.sleep(500)
+    wscript.sleep(1000)
 
     funcGetInput = objHTML.ParentWindow.ClipboardData.GetData("text")
 end function
@@ -115,8 +115,8 @@ do
         strCommand = funcGetCommand(strCurt, "/ionvop ")
 
         if instr(strCommand,"say ") then
-            objShell.sendkeys(funcGetParameters(strCommand, "/say "))
-            wscript.sleep(500)
+            objShell.sendkeys(funcGetParameters(strCommand, "say "))
+            wscript.sleep(1000)
             objShell.sendkeys("~")
             wscript.sleep(100)
         elseif instr(strCommand,"roll ") then
@@ -146,13 +146,13 @@ do
                 end if
             end if
         elseif instr(strCommand,"help") then
-            objShell.sendkeys("Currently available commands:+~+~/say <sentence>+~It will make the bot repeat the sentence+~+~/roll <lowest number> <highest number>+~It will randomly choose a number between the two")
-            wscript.sleep(500)
+            objShell.sendkeys("Currently available commands:+~+~say <sentence>+~It will make the bot repeat the sentence+~+~roll <lowest number> <highest number>+~It will randomly choose a number between the two+~+~help+~Display this message")
+            wscript.sleep(5000)
             objShell.sendkeys("~")
             wscript.sleep(100)
         else
             objShell.sendkeys("Unknown command")
-            wscript.sleep(500)
+            wscript.sleep(1000)
             objShell.sendkeys("~")
             wscript.sleep(100)
         end if
