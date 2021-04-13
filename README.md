@@ -12,6 +12,7 @@ This is because Developer Tools work differently on different browsers, and some
 The variation that is currently the first to be updated is `main-edge.vbs`
 
 This is just a **personal project**.\
+This is not made to be used by other people.\
 I only made this for shits and giggles.
 
 &nbsp;
