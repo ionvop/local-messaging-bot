@@ -15,6 +15,8 @@ The variation that is currently the first to be updated is `main-edge.vbs`
 This is just a **personal project**.\
 I only made this for shits and giggles.
 
+&nbsp;
+
 ## Script variations
 ### main-edge.vbs
 - Copies the entire HTML of the current page.
