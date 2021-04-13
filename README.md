@@ -18,7 +18,7 @@ I only made this for shits and giggles.
 &nbsp;
 
 ## Script variations
-### main-edge.vbs
+### main-edge
 - Copies the entire HTML of the current page.
 - Compatible on most sites, requires longer delay on larger HTML.
 - Works well on Discord, works absolutely shit on Facebook because of how much HTML it contains.
