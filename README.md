@@ -19,6 +19,7 @@ I only made this for shits and giggles.
 
 ## Script variations
 ### main-edge
+- Made for the Edge browser.
 - Copies the entire HTML of the current page.
 - Compatible on most sites, requires longer delay on larger HTML.
 - Works well on Discord, works absolutely shit on Facebook because of how much HTML it contains.
@@ -28,8 +29,12 @@ I only made this for shits and giggles.
 - Responses are extremely delayed.
 
 ### main-firefox
+- Made for the Firefox browser.
 - The first variation I worked on.
 - Only finds and copies the div element where a command is located.
 - Much faster and requires lesser delay.
 - Not compatible on some situations.
 - Will not work on large text on Discord since Discord handles large texts differently causing inconsistency on the navigation which breaks the bot.
+
+### Other notes
+- Still trying to find a way to make it work for Chrome.
