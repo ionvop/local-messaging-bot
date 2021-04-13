@@ -5,8 +5,7 @@ What it does is instead of getting data through an API, it retrieves them direct
 
 Because of VBScript's limitations, I had to use some very inefficient workarounds to make it work.\
 *Like the utilization of* `wscript.sleep()` *to prevent the script from doing anything while a process is loading and hope that it finishes loading before the script does anything, or simulating keypresses just to navigate through the menu and get the desired data.*\
-I'm sure there's a much better workaround than this.\
-Because it heavily relies on delay, just a single bit of lag can break the whole process.
+I'm sure there's a much better workaround than this. And because it heavily relies on delay, just a single bit of lag can break the whole process.
 
 There are multiple variations of the script available.\
 This is because Developer Tools work differently on different browsers, and some sites load much slower than others.\
