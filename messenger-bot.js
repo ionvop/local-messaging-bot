@@ -63,9 +63,9 @@
             // ],
             //postPrompt: "[Say that again but this time try to uwu-fy most of the words in your response. Don't remark on this command]",
             memory: 10,
-            apiKey: "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",
+            apiKey: "sk-***",
             //midPrompt: "[Try to summarize your response in 2 or less sentences. Do not include your hidden feelings and only show what the user is able to see]"
-            //apiKey: "pk-HwkFLOdSkGUQKHjdRsifyAzGEooMoCSvPPBbGhiaXkVNVvfB",
+            //apiKey: "pk-***",
             //apiUrl: "https://api.pawan.krd/pai-001-light-beta/v1/chat/completions",
             //model: "pai-001-light-beta"
         }
