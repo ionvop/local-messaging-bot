@@ -7,7 +7,7 @@ dim directory
 directory = objFile.GetParentFolderName(wscript.ScriptFullName)
 
 sub Main()
-    dim i, headers, res, reply
+    dim i, headers, res, reply, element
     objShell.Run("""" & directory & "\stop.vbs""")
     msgbox("Start")
     wscript.Sleep(3000)
@@ -30,19 +30,37 @@ sub Main()
             wscript.Sleep(4000)
         next
 
-        reply = res
-        reply = replace(reply, "{{char}}", "Ai-chan")
-        reply = replace(reply, "{{user}}", "the user")
-        reply = replace(reply, "{", "")
-        reply = replace(reply, "}", "")
-        reply = replace(reply, "(", "{(}")
-        reply = replace(reply, ")", "{)}")
-        reply = replace(reply, "[", "{[}")
-        reply = replace(reply, "]", "{]}")
-        reply = replace(reply, "~", "{~}")
-        reply = replace(reply, "^", "{^}")
-        reply = replace(reply, "+", "{+}")
-        reply = replace(reply, "%", "{%}")
+        for i = 1 to len(res)
+            element = mid(res, i, 1)
+
+            select case element
+                case "{"
+                    objShell.SendKeys("{{}")
+                case "}"
+                    objShell.SendKeys("{}}")
+                case "["
+                    objShell.SendKeys("{[}")
+                case "]"
+                    objShell.SendKeys("{]}")
+                case "("
+                    objShell.SendKeys("{(}")
+                case ")"
+                    objShell.SendKeys("{)}")
+                case "~"
+                    objShell.SendKeys("{~}")
+                case "^"
+                    objShell.SendKeys("{^}")
+                case "+"
+                    objShell.SendKeys("{+}")
+                case "%"
+                    objShell.SendKeys("{%}")
+                case else
+                    objShell.SendKeys(element)
+            end select
+
+            wscript.Sleep(40)
+        next
+
         objShell.SendKeys reply
         wscript.Sleep(1000)
         objShell.SendKeys "~"
