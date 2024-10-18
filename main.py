@@ -3,17 +3,23 @@ import requests
 import pyperclip
 import time
 import math
+import json
 
 
 def main():
-    targetUrl = "https://jsonblob.com/api/1202412654697504768"
+    targetUrl = "https://jsonblob.com/api/1296742335508242432"
 
     headers = {
         "Content-Type": "application/json",
         "Accept": "application/json",
     }
 
-    data = "Awaiting response..."
+    data = {
+        "status": 204,
+        "message": "Awaiting response..."
+    }
+
+    data = json.dumps(data)
     time.sleep(3)
     print("Putting...")
     requests.put(targetUrl, headers=headers, data=data)
@@ -22,25 +28,36 @@ def main():
         print("Getting...")
 
         while True:
-            start_time = time.time()
-            response = requests.get(targetUrl, headers=headers)
-            response = response.text
+            try:
+                start_time = time.time()
+                response = requests.get(targetUrl, headers=headers)
+                response = response.json()
 
-            if response != "Awaiting response...":
-                break
+                if response["status"] == 200:
+                    break
 
-            time_taken = time.time() - start_time
-            print("Ping: " + str(math.floor(time_taken * 1000)) + "ms")
-            time.sleep(1)
+                time_taken = time.time() - start_time
+                print("Ping: " + str(math.floor(time_taken * 1000)) + "ms")
+                time.sleep(4)
+            except:
+                print("Failed to get response")
+                time.sleep(4)
 
+        response = response["message"]
         print("Received: " + response)
         time_taken = time.time() - start_time
         print("Ping: " + str(math.floor(time_taken * 1000)) + "ms")
         print("Pasting...")
-        pyperclip.copy(response)
+        pyperclip.copy("AI-chan: " + response)
         pyautogui.hotkey("ctrl", "v")
         pyautogui.press("enter")
-        data = "Awaiting response..."
+
+        data = {
+            "status": 204,
+            "message": "Awaiting response..."
+        }
+
+        data = json.dumps(data)
         requests.put(targetUrl, headers=headers, data=data)
 
 
